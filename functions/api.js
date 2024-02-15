@@ -5,6 +5,9 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.send("App is running..!!!!");
 });
+router.get("/hello", (req, res) => {
+  res.send("Привет! Меня зовут Айдар");
+});
 app.use("/.netlify/functions/api", router);
 module.exports.handler = serverless(app);
 // const port = 8080;
