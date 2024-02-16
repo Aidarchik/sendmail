@@ -44,6 +44,8 @@
 const nodemailer = require("nodemailer");
 
 exports.handler = function (event, context, callback) {
+  // let data = JSON.parse(event.body)
+
   let transporter = nodemailer.createTransport({
     host: "smtp.mail.ru",
     port: 465,
