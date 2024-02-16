@@ -14,24 +14,22 @@ const transporter = nodemailer.createTransport({
 
 async function main() {
   try {
-    const info = await transporter.sendMail({
+    return await transporter.sendMail({
       from: "aidar.mustaev@mail.ru",
       to: "giper.kubik@yandex.ru",
       subject: "Hello ✔",
       text: "Hello world?",
       html: "<b>Hello world?</b>",
     });
-    console.log("Message sent: %s", info.messageId);
   } catch (error) {
-    console.log(error.message);
+    return error;
   }
 }
 
 const app = express();
 const router = express.Router();
 router.get("/", (req, res) => {
-  main();
-  res.send("App is running..!!!!");
+  res.send(main());
 });
 router.get("/hello", (req, res) => {
   res.send("Привет! Меня зовут Айдар");
