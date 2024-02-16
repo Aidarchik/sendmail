@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 router.get("/hello", (req, res) => {
   res.send("Привет! Меня зовут Айдар");
 });
-app.use("/api", router);
+app.use("/", router);
 module.exports.handler = serverless(app);
 // const port = 8080;
 //app.listen(process.env.PORT || port, () => {
