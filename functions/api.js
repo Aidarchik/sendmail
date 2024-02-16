@@ -22,7 +22,7 @@ async function main() {
       html: "<b>Hello world?</b>",
     });
   } catch (error) {
-    return error;
+    return error.message;
   }
 }
 
